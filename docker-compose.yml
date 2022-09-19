@@ -1,0 +1,36 @@
+on: "3.9"
+
+volumes:
+  hesk-mysql:
+    name: hesk-mysql
+  hesk-web:
+    name: hesk-web
+
+services:
+  hesk-web:
+    image: hesk
+    container_name: hesk-web
+    restart: always
+    depends_on: 
+      - hesk-mysql
+    volumes:
+      - "hesk-web:/www/hesk"
+    ports:
+     - "80:80"
+    environment:
+      TZ: "Asia/Taipei"
+      
+    
+  hesk-mysql:
+    image: mysql:5.7 # Or MariaDB, Must greater than MySQL 5.0.7
+    container_name: hesk-mysql
+    restart: always
+    volumes:
+    - "hesk-mysql:/var/lib/mysql"
+    environment:
+      TZ: "Asia/Taipei"
+      MYSQL_TZ: "Asia/Taipei"
+      MYSQL_USER: hesk
+      MYSQL_PASSWORD: hesk
+      MYSQL_ROOT_PASSWORD: hesk
+      MYSQL_DATABASE: hesk
