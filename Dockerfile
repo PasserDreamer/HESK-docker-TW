@@ -13,5 +13,6 @@ RUN echo "extension=json" >> /etc/php7/php.ini
 RUN chmod 666 hesk/hesk_settings.inc.php
 RUN chmod 777 hesk/attachments
 RUN chmod 777 hesk/cache
+RUN chown php:php hesk/install
 
 RUN sed -i 's@/www/public@/www/hesk@g' /etc/nginx/nginx.conf
