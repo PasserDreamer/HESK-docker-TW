@@ -15,9 +15,10 @@ $hesk_settings['admin_css_url']='https://www.example.com/hesk-style.css';
 
 // --> Language settings
 $hesk_settings['can_sel_lang']=0;
-$hesk_settings['language']='English';
+$hesk_settings['language']='台灣繁體';
 $hesk_settings['languages']=array(
     'English' => array('folder'=>'en','hr'=>'------ Reply above this line ------'),
+	'台灣繁體' => array('folder'=>'zh_cmn_hant','hr'=>'------ 回覆該行上方 ------'),
 );
 
 // --> Database settings
@@ -199,7 +200,7 @@ $hesk_settings['format_updated']='Y-m-d g:i a';
 // ==> MISC
 
 // --> Date & Time
-$hesk_settings['timezone']='UTC';
+$hesk_settings['timezone']='Asia/Taipei';
 $hesk_settings['format_time']='H:i:s';
 $hesk_settings['format_date']='Y-m-d';
 $hesk_settings['format_timestamp']='Y-m-d H:i:s';
