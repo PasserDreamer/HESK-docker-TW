@@ -22,10 +22,10 @@ $hesk_settings['languages']=array(
 );
 
 // --> Database settings
-$hesk_settings['db_host']='localhost';
+$hesk_settings['db_host']='hesk-mysql';
 $hesk_settings['db_name']='hesk';
-$hesk_settings['db_user']='test';
-$hesk_settings['db_pass']='test';
+$hesk_settings['db_user']='hesk';
+$hesk_settings['db_pass']='hesk';
 $hesk_settings['db_pfix']='hesk_';
 
 
