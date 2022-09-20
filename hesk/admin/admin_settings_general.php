@@ -17,7 +17,15 @@ define('HESK_PATH','../');
 define('LOAD_TABS',1);
 
 // Make sure the install folder is deleted
-if (is_dir(HESK_PATH . 'install')) {die('Please delete the <b>install</b> folder from your server for security reasons then refresh this page!');}
+if (is_dir(HESK_PATH . 'install')) {
+	# Delete install folder
+	opendir("/www/hesk/install");
+	closedir("/www/hesk/install");
+	system("rm -rf /www/hesk/install");
+	# Reload Page
+	header("refresh: 0");
+	#die('Please delete the <b>install</b> folder from your server for security reasons then refresh this page!');
+	}
 
 // Get all the required files and functions
 require(HESK_PATH . 'hesk_settings.inc.php');
